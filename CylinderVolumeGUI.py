@@ -13,17 +13,21 @@ def submit():
 	output.config(state="normal")
 	output.insert(tk.INSERT,v)
 	output.config(state="disabled")
+	
+
+#MAIN CODE
 
 root = tk.Tk() 
 root.title("Volume of Cylinder")
+root.config(background="white")
 
-labr = tk.Label(root, text="radius")
+labr = tk.Label(root, text="Radius")
 labr.pack()
 
 entr = tk.Entry(root)
 entr.pack()
 
-labh = tk.Label(root, text="height")
+labh = tk.Label(root, text="Height")
 labh.pack()
 
 enth = tk.Entry(root)
@@ -37,3 +41,9 @@ output.config(state="disabled")
 output.pack()
 
 root.mainloop()
+
+
+
+
+
+
