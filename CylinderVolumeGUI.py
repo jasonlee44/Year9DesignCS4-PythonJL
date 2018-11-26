@@ -38,7 +38,7 @@ btn.pack()
 
 output = tk.Text(root, width=50, height=10, borderwidth=3, relief=tk.GROOVE)
 output.config(state="disabled")
-output.pack()
+output.pack()=
 
 root.mainloop()
 

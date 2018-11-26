@@ -10,7 +10,7 @@ lab = tk.Label(root, text = "Enter a number:")
 # <object>.grid(<parameters>)
 
 lab.grid(row = 0, column = 0)
-lab.configure(bg="brown")x
+lab.configure(bg="brown")
 
 ent = tk.Entry(root)
 ent.grid(row = 1, column = 0)
