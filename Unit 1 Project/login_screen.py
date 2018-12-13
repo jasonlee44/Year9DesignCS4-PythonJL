@@ -1,3 +1,5 @@
+#By Jason Lee
+
 import tkinter as tk
 from PIL import ImageTk, Image
 
@@ -7,6 +9,8 @@ outputStr = ""
 userPass = {}
 x=""
 text = ""
+
+
 
 def loginOption():
 	global x
@@ -24,7 +28,7 @@ root.configure(background="#52B3FF")
 v = tk.IntVar()
 root.title("Login")
 root.geometry("300x300")
-
+text=""
 def submit():
 	global text
 	username = entryUN.get()
@@ -33,19 +37,36 @@ def submit():
 	print(outputStr)
 
 	if x==1:
-		if (username in userPass) == False:
-		    print("Wrong username")
+		if (username in userPass) == False:		
+			outputText.config(state="normal")
+			outputText.delete('1.0','end')
+			outputText.insert(tk.INSERT,"Wrong username or password")
+			outputText.config(state="disabled")
 		else:
 		    if userPass[username] != password:
-		        print("Wrong passsword!")
+		    	outputText.config(state="normal")
+		    	outputText.delete('1.0','end')
+		    	outputText.insert(tk.INSERT,"Wrong username or password")
+		    	outputText.config(state="disabled")
 		    else:
-		        print("Login Successful")
+		    	outputText.config(state="normal")
+		    	outputText.delete('1.0','end')
+		    	outputText.insert(tk.INSERT,"Login Successful")
+		    	outputText.config(state="disabled")
 	if x==2:
 		if username in userPass:
-			print("This username already exists")
+			outputText.config(state="normal")
+			outputText.delete('1.0','end')
+			outputText.insert(tk.INSERT,"Username already exists")
+			outputText.config(state="disabled")
 		else:
+			entryUN.delete('0','end')
+			entryPW.delete('0','end')
+			outputText.config(state="normal")
+			outputText.delete('1.0','end')
+			outputText.insert(tk.INSERT,"Please login")
+			outputText.config(state="disabled")			
 			userPass[username] = password
-			print("Please login")
 
 
 labUN = tk.Label(root, text="Username",background="#52B3FF")
@@ -64,22 +85,16 @@ btn1 = tk.Button(root, text="Submit",command = submit, width=10,background="#52B
 btn1.grid(row=5,column=1,columnspan=1,sticky="S")
 
 #-----Outputs (please login,username already exists)
-outputText = tk.Entry(root,width=13)
-outputText.insert(tk.INSERT,text)
-outputText.grid(row=8, column=1,sticky="NS")
+outputText = tk.Text(root,width=30,height=1)
+outputText.grid(row=8, column=1,sticky="W")
+outputText.config(state="disabled",bg="#52B3FF",borderwidth=1,highlightthickness=0,foreground="white")
 
 #----Radio buttons to select 'login' or 'sign up'---------
 loginSelect = tk.Radiobutton(root,text="Login",variable=v,value=1,background="#52B3FF",command=loginOption)
 loginSelect.grid(row=6,column=1,sticky="W")
 
+
 signupSelect = tk.Radiobutton(root,text="Sign Up",variable=v,value=2,background="#52B3FF",command=signupOption)
 signupSelect.grid(row=7,column=1,sticky="W")
 
-
 root.mainloop()
-
-
-
-
-
-

@@ -1,3 +1,6 @@
+#By Jason Lee
+
+
 username = {}
 
 while True:
@@ -24,8 +27,6 @@ while True:
                 username[usernameInput] = passwordConfirm
                 print("Please login")
 
-
-
     if x == 1:
         usernameInput = input("What is your username? ")
         if (usernameInput in username) == False:
@@ -40,11 +41,3 @@ while True:
     if x == 3:
         print("Program Exited")
         break
-
-
-
-
-
-
-
-
