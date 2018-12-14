@@ -17,16 +17,12 @@ solution.append(QandA[0:locstar])
 solution.append(QandA[locstar+1:])
 print(solution)
 
-#—––––––––––––––––––––––––––––––––––––––––––
-scorevalue=int(0)
 
 #—––––––––––––––––––––––––––––––––––––––––––
 def change(*args):
 	print(var.get())
 
 #—––––––––––––––––––––––––––––––––––––––––––
-
-
 root = tk.Tk()
 root.title("Music Test")
 root.geometry("700x520")
@@ -69,7 +65,7 @@ def showImg(*args):
 	if var2.get()==0:
 		panel.config(state="disabled")
 
-
+#———Accessibility, changes the background colour of widgets to white———
 def accessibility():
 	if var3.get()==1:
 		root.config(bg="white")
@@ -116,7 +112,7 @@ answer.grid(row=4, column=1, columnspan=1)
 submit = tk.Button(root, text="Submit",command = press,width=10,bg="#61B4EA")
 submit.grid(row=7,column=1,rowspan=1,sticky="N")
 
-#—––––––––––––––––––––––––––––––––––––––––––
+#———Drop down menu for the type of questions———
 OPTIONS = [
 	"Sharp ♯",
 	"Flat ♭",
@@ -152,4 +148,3 @@ acc.grid(row=1,column=2,sticky="W")
 
 root.mainloop()
 print("End program")
-
